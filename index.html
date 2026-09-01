@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="allchessb is a living atlas and simulator for chess across time, cultures, and dimensions.">
+    <title>allchessb / atlas of strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#library" aria-label="allchessb home">
+        <span class="brand-mark">+</span>
+        <span>all<span class="brand-soft">chessb</span></span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#library">Library</a>
+        <a href="#playground">Playground</a>
+        <a href="#learn">Learn</a>
+      </nav>
+      <div class="top-actions">
+        <select id="locale" aria-label="Language">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="ja">日本語</option>
+          <option value="ar">ع</option>
+        </select>
+        <button class="text-button" id="auth-open">Sign in</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="library">
+        <div class="hero-copy">
+          <p class="eyebrow">AN ATLAS OF STRATEGY <span>35 / 35 WORLDS INDEXED</span></p>
+          <h1>Every chess game<br><em>belongs here.</em></h1>
+          <p class="hero-intro">From ancient race games to impossible geometries, allchessb gathers the family tree of strategy into one living board.</p>
+          <a class="primary-button" href="#playground">Enter playground <span>↗</span></a>
+        </div>
+
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="orbit-core">♔</div>
+          <span class="orbit-note note-a">2600 BCE</span>
+          <span class="orbit-note note-b">∞ DIMENSIONS</span>
+        </div>
+      </section>
+
+      <section class="library-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / THE LIBRARY</p>
+            <h2>Featured worlds</h2>
+          </div>
+          <div class="filters">
+            <label class="search">
+              <span>⌕</span>
+              <input id="search" placeholder="Search variants">
+            </label>
+            <select id="era-filter" aria-label="Filter by era">
+              <option>All</option>
+              <option>Ancient</option>
+              <option>Classical</option>
+              <option>Modern</option>
+              <option>Experimental</option>
+            </select>
+          </div>
+        </div>
+        <div id="variant-grid" class="variant-grid"></div>
+      </section>
+
+      <section class="playground" id="playground">
+        <div class="play-copy">
+          <p class="eyebrow">02 / THE PLAYGROUND</p>
+          <h2 id="selected-name">Chess</h2>
+          <p id="selected-subtitle">The royal game · FIDE</p>
+          <div class="play-meta">
+            <span id="dimension-label">8 × 8</span>
+            <span class="status-dot"></span>
+            <span id="selected-mode">Classic</span>
+          </div>
+          <div id="mode-tabs" class="mode-tabs"></div>
+        </div>
+
+        <div class="board-wrap">
+          <div class="board" id="board" aria-label="Chess board"></div>
+          <div class="board-caption">
+            <span id="board-position">White to move</span>
+            <button id="reset-board" class="icon-button" aria-label="Reset board" title="Reset board">↻</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="learn" id="learn">
+        <p class="eyebrow">03 / THE ARCHIVE</p>
+        <div>
+          <h2>One board.<br><em>Many universes.</em></h2>
+          <p>Rules evolve with the cultures that carry them. allchessb makes that lineage playable, searchable, and yours to study.</p>
+        </div>
+        <div class="archive-stats">
+          <div><strong>35</strong><span>worlds</span></div>
+          <div><strong>05</strong><span>dimensions</span></div>
+          <div><strong>∞</strong><span>possibilities</span></div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="auth-dialog">
+      <button class="dialog-close" id="auth-close" aria-label="Close">×</button>
+      <p class="eyebrow">LOCAL ACCOUNT</p>
+      <h2 id="auth-title">Welcome back</h2>
+      <p class="dialog-note">Your account stays on this device.</p>
+
+      <form id="auth-form">
+        <label>
+          <span>Email</span>
+          <input id="auth-email" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="auth-password" type="password" minlength="10" autocomplete="current-password" required>
+        </label>
+        <p class="form-error" id="form-error" role="alert"></p>
+        <button class="primary-button" type="submit">Sign in <span>↗</span></button>
+      </form>
+
+      <button class="switch-auth" id="auth-switch">Create account</button>
+    </dialog>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
