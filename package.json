@@ -2,6 +2,7 @@
   "name": "allchess",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://allchess.com",
   "type": "module",
   "scripts": {
     "test": "node --test",
